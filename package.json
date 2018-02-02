@@ -22,6 +22,7 @@
   "homepage": "https://github.com/m0nclous/api-on-nodejs#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "connect": "^3.6.5",
     "express": "^4.15.2",
     "mapred": "^0.1.0",
     "mongodb": "^2.2.25"

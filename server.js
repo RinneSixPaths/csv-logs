@@ -5,10 +5,12 @@ var ObjectID = require('mongodb').ObjectID;
 var db = require('./db');
 var logsController = require('./controllers/commands');
 
+const queryHandler = require('./controllers/requestToBdHandler');
+
 var app = express();
 
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 var CSVlogs = ['google.com,62.185.176.128,1513676560910,56000',
                'google.com,62.185.176.122,1513676560910,56000',
@@ -48,4 +50,16 @@ db.connect('mongodb://localhost:27017/myapi', function(err) {
 	app.listen(3012, function() {
 		console.log('SPP app started');
 	});
+});
+
+app.post("/teest", function (request, response) {
+    
+    console.log('got request!');
+    console.log(request.method);
+    
+    const siteObject = queryHandler.getSiteByName(request.body);
+    /*let test = request.body;
+    
+    response.json(test);*/
+    
 });
