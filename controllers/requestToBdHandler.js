@@ -9,6 +9,7 @@ exports.getSiteByName = function(hostName, req, res) {
 		if (err) {
 			console.log(err);
 		}
+        console.log(logs);
         res.json(logs);
 	});
 }

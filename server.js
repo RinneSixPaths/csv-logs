@@ -66,7 +66,4 @@ app.post("/teest", function (request, response) {
     
     const siteObject = queryHandler.getSiteByName(request.body.hostName, request, response);
     
-    console.log(siteObject);
-    //response.json(siteObject);
-    
 });

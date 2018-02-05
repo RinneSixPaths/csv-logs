@@ -17,17 +17,16 @@
 
                         method: "POST",
                         headers: {
-                          'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-                          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-                        },
-                        body: `hostName=${text}`
+                            'Accept': 'application/json, text/plain, */*',
+                            'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify({hostName: text})
 
                     })
                     .then(function(response) {
-                            return response.json();
+                        return response.json();
                     })
                     .then(data => {
-                        console.log('here')
                         console.log(data);
                     });
             });
